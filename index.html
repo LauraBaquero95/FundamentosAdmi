@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de la Administración</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(30, 60, 114, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff !important;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #fff !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #4dabf7;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            opacity: 0.3;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        /* Content Section */
+        .content-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #4dabf7, #1e3c72);
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            background: white;
+            animation: fadeInUp 0.8s ease backwards;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(30,60,114,0.15);
+        }
+
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .card-text {
+            color: #5a6c7d;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: #4dabf7;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">
+                <i class="fas fa-chart-line me-2"></i>Administración
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="background: rgba(255,255,255,0.1); border: none;">
+                <span style="color: white;"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#antecedentes">Antecedentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#globalizacion">Globalización</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#etica">Ética</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#administrador">El Administrador</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#empresa">La Empresa</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container text-center">
+            <h1>Fundamentos de la Administración</h1>
+            <p>Descubre los principios esenciales que guían el éxito organizacional en el mundo moderno. La administración es más que teoría: es la práctica diaria que transforma recursos en resultados, estrategias en logros y equipos en fuerzas productivas.</p>
+        </div>
+    </section>
+
+    <!-- Antecedentes -->
+    <section class="content-section" id="antecedentes">
+        <div class="container">
+            <h2 class="section-title fade-in-scroll">Antecedentes Históricos</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" class="card-img-top" alt="Pirámides">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+                            <h3 class="card-title">Orígenes Ancestrales</h3>
+                            <p class="card-text">Desde las pirámides de Egipto hasta la Muralla China, la humanidad ha aplicado principios administrativos para lograr obras monumentales. La planificación, organización y control han sido pilares del progreso humano desde tiempos inmemoriales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="card-img-top" alt="Revolución Industrial">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-industry"></i></div>
+                            <h3 class="card-title">Revolución Industrial</h3>
+                            <p class="card-text">Con la Revolución Industrial, la administración evolucionó dramáticamente. La división del trabajo de Adam Smith y la necesidad de gestionar fábricas y recursos convirtieron a la administración en una disciplina esencial para el desarrollo económico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Globalización -->
+    <section class="content-section" style="background: white;" id="globalizacion">
+        <div class="container">
+            <h2 class="section-title fade-in-scroll">Globalización y Nuevas Tendencias</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800" class="card-img-top" alt="Globalización">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
+                            <h3 class="card-title">Aldea Global</h3>
+                            <p class="card-text">Las empresas operan en múltiples países y los gerentes deben adaptarse a mercados internacionales diversos, gestionando equipos multiculturales y enfrentando desafíos globales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" class="card-img-top" alt="Diversidad">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-users"></i></div>
+                            <h3 class="card-title">Diversidad Laboral</h3>
+                            <p class="card-text">La fuerza laboral moderna es diversa: generaciones, culturas y perspectivas distintas convergen, exigiendo liderazgo empático y habilidades de gestión intercultural.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" class="card-img-top" alt="Tecnología">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h3 class="card-title">Transformación Digital</h3>
+                            <p class="card-text">La tecnología ha revolucionado el trabajo. El trabajo remoto, la inteligencia artificial y las organizaciones que aprenden son parte del nuevo paradigma administrativo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ética -->
+    <section class="content-section" id="etica">
+        <div class="container">
+            <h2 class="section-title fade-in-scroll">Ética y Responsabilidad</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800" class="card-img-top" alt="Ética">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                            <h3 class="card-title">Base de la Confianza</h3>
+                            <p class="card-text">La ética empresarial no es opcional: es fundamental. Actuar con honestidad, respeto y responsabilidad genera confianza, mejora el ambiente laboral y fortalece la reputación organizacional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?w=800" class="card-img-top" alt="Valores">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                            <h3 class="card-title">Cultura Organizacional</h3>
+                            <p class="card-text">Una cultura ética se construye con códigos de conducta, capacitación continua y liderazgo ejemplar. Los valores compartidos son la base de relaciones sostenibles y éxito a largo plazo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Administrador -->
+    <section class="content-section" style="background: white;" id="administrador">
+        <div class="container">
+            <h2 class="section-title fade-in-scroll">El Administrador Moderno</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card fade-in-scroll text-center">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                            <h3 class="card-title">Planeación</h3>
+                            <p class="card-text">Definir metas claras y estrategias efectivas para alcanzar los objetivos organizacionales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card fade-in-scroll text-center">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-sitemap"></i></div>
+                            <h3 class="card-title">Organización</h3>
+                            <p class="card-text">Asignar tareas y responsabilidades de manera eficiente para optimizar recursos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card fade-in-scroll text-center">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-people-arrows"></i></div>
+                            <h3 class="card-title">Dirección</h3>
+                            <p class="card-text">Motivar, guiar y liderar equipos hacia el cumplimiento de objetivos comunes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card fade-in-scroll text-center">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3 class="card-title">Control</h3>
+                            <p class="card-text">Verificar resultados y ajustar procesos para garantizar el éxito planificado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200" class="card-img-top" alt="Habilidades">
+                        <div class="card-body">
+                            <h3 class="card-title">Habilidades Esenciales</h3>
+                            <p class="card-text">Un administrador exitoso combina habilidades técnicas (dominio de su área), habilidades humanas (comunicación y empatía) y habilidades conceptuales (visión estratégica). La capacidad de resolver problemas, gestionar el tiempo y liderar equipos define el perfil del gerente moderno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- La Empresa -->
+    <section class="content-section" id="empresa">
+        <div class="container">
+            <h2 class="section-title fade-in-scroll">La Empresa y su Estructura</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" class="card-img-top" alt="Empresa">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-building"></i></div>
+                            <h3 class="card-title">Organización Empresarial</h3>
+                            <p class="card-text">La empresa integra recursos humanos, financieros, materiales y tecnológicos organizados para cumplir objetivos. Sus áreas clave incluyen mercadeo, producción, recursos humanos y finanzas, trabajando en sinergia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card fade-in-scroll">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" class="card-img-top" alt="Clasificación">
+                        <div class="card-body">
+                            <div class="card-icon"><i class="fas fa-th-large"></i></div>
+                            <h3 class="card-title">Tipos de Empresas</h3>
+                            <p class="card-text">Las empresas se clasifican por actividad (industrial, comercial, servicios), origen del capital (públicas, privadas), tamaño (pequeñas, medianas, grandes) y forma legal. Las PyMES son motores del desarrollo local.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card fade-in-scroll" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <div class="card-body text-center py-5">
+                            <div class="card-icon" style="color: white;"><i class="fas fa-lightbulb"></i></div>
+                            <h3 class="card-title" style="color: white;">Reflexión Final</h3>
+                            <p class="card-text" style="color: rgba(255,255,255,0.95); font-size: 1.1rem;">La administración no se limita al ámbito empresarial: es una práctica cotidiana. Al planificar nuestro tiempo, organizar actividades o tomar decisiones, aplicamos principios administrativos. Esta disciplina ancestral sigue siendo esencial en un mundo que cambia aceleradamente y nos exige adaptación constante para alcanzar nuestros objetivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Fundamentos de la Administración. Contenido educativo.</p>
+        <br>    
+                    <p class="mb-0">&copy; Nicolas Molina Osorio 🧑🏻‍💼</p>
+
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add animation delay to cards
+        document.querySelectorAll('.card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>
