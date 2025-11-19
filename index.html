@@ -75,7 +75,24 @@
         .nav-link:hover::after {
             width: 80%;
         }
+/* Optimización del navbar para evitar desbordamiento */
+@media (min-width: 992px) and (max-width: 1400px) {
+    .nav-link {
+        font-size: 0.9rem;
+        margin: 0 0.3rem;
+        padding: 0.5rem 0.4rem !important;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
 
+@media (min-width: 1400px) {
+    .nav-link {
+        margin: 0 0.5rem;
+    }
+}
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -309,10 +326,10 @@ footer a:hover {
     </style>
 </head>
 <body>
-    <!-- Navbar -->
- <!-- Navbar -->
+
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
+    <div class="container-fluid px-4">
         <a class="navbar-brand" href="#hero">
             <i class="fas fa-chart-line me-2"></i>Administración
         </a>
@@ -324,17 +341,16 @@ footer a:hover {
                 <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#antecedentes">Antecedentes</a></li>
                 <li class="nav-item"><a class="nav-link" href="#naturaleza">Naturaleza</a></li>
-                <li class="nav-item"><a class="nav-link" href="#conceptos">Conceptos Clave</a></li>
+                <li class="nav-item"><a class="nav-link" href="#conceptos">Conceptos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#globalizacion">Globalización</a></li>
                 <li class="nav-item"><a class="nav-link" href="#etica">Ética</a></li>
-                <li class="nav-item"><a class="nav-link" href="#administrador">El Administrador</a></li>
-                <li class="nav-item"><a class="nav-link" href="#empresa">La Empresa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#administrador">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#empresa">Empresa</a></li>
                 <li class="nav-item"><a class="nav-link" href="#entorno">Entorno</a></li>
             </ul>
         </div>
     </div>
 </nav>
-
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="container text-center">
