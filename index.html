@@ -189,13 +189,31 @@
             margin-bottom: 1rem;
         }
 
-        /* Footer */
-        footer {
-            background: #1e3c72;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
+    /* Footer */
+footer {
+    background: #1e3c72;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 0;
+    width: 100%;
+}
+
+footer p {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: none;
+}
 
         /* Animations */
         @keyframes fadeIn {
@@ -252,30 +270,70 @@
                 font-size: 2rem;
             }
         }
+        /* Estilos adicionales para nuevas secciones */
+.card ul {
+    text-align: left;
+    padding-left: 1.5rem;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Mejoras de responsividad para tablets */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .card-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* Animaciones suaves para hover en cards nuevas */
+.card[style*="border-left"],
+.card[style*="border-top"] {
+    transition: all 0.3s ease;
+}
+
+.card[style*="border-left"]:hover,
+.card[style*="border-top"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(30,60,114,0.15);
+}
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#hero">
-                <i class="fas fa-chart-line me-2"></i>Administración
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="background: rgba(255,255,255,0.1); border: none;">
-                <span style="color: white;"><i class="fas fa-bars"></i></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#antecedentes">Antecedentes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#globalizacion">Globalización</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#etica">Ética</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#administrador">El Administrador</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#empresa">La Empresa</a></li>
-                </ul>
-            </div>
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#hero">
+            <i class="fas fa-chart-line me-2"></i>Administración
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="background: rgba(255,255,255,0.1); border: none;">
+            <span style="color: white;"><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#antecedentes">Antecedentes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#naturaleza">Naturaleza</a></li>
+                <li class="nav-item"><a class="nav-link" href="#conceptos">Conceptos Clave</a></li>
+                <li class="nav-item"><a class="nav-link" href="#globalizacion">Globalización</a></li>
+                <li class="nav-item"><a class="nav-link" href="#etica">Ética</a></li>
+                <li class="nav-item"><a class="nav-link" href="#administrador">El Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#empresa">La Empresa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#entorno">Entorno</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -313,7 +371,139 @@
             </div>
         </div>
     </section>
+<!-- Naturaleza de la Administración -->
+<section class="content-section" style="background: white;" id="naturaleza">
+    <div class="container">
+        <h2 class="section-title fade-in-scroll">¿La Administración es Ciencia, Técnica o Arte?</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card fade-in-scroll">
+                    <div class="card-body text-center">
+                        <div class="card-icon"><i class="fas fa-flask"></i></div>
+                        <h3 class="card-title">Como Ciencia</h3>
+                        <p class="card-text">La administración posee un cuerpo sistemático de conocimientos verificables y universales. Se fundamenta en principios teóricos, métodos de investigación y estudios empíricos que permiten explicar y predecir fenómenos organizacionales. Autores como Taylor y Fayol establecieron bases científicas para la gestión empresarial.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card fade-in-scroll">
+                    <div class="card-body text-center">
+                        <div class="card-icon"><i class="fas fa-tools"></i></div>
+                        <h3 class="card-title">Como Técnica</h3>
+                        <p class="card-text">Implica la aplicación práctica de conocimientos mediante herramientas, procedimientos y métodos específicos. La técnica administrativa se manifiesta en la implementación de sistemas de control, modelos de planeación estratégica, organigramas y procesos operativos que resuelven problemas concretos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card fade-in-scroll">
+                    <div class="card-body text-center">
+                        <div class="card-icon"><i class="fas fa-palette"></i></div>
+                        <h3 class="card-title">Como Arte</h3>
+                        <p class="card-text">Requiere creatividad, intuición y habilidades personales únicas. El arte de administrar se evidencia en la capacidad del gerente para liderar, inspirar, negociar y tomar decisiones en contextos de incertidumbre. Cada administrador desarrolla su propio estilo según su experiencia y visión.</p>
+                    </div>
+                    <br>
+                  
 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="card-body text-center py-4">
+                        <h4 style="color: white; font-weight: 700; margin-bottom: 1rem;">
+                            <i class="fas fa-lightbulb me-2"></i>Conclusión Integradora
+                        </h4>
+                        <p style="color: white; font-size: 1.1rem; margin: 0;">
+                            La administración es una disciplina multidimensional que integra las tres perspectivas. Es ciencia por su fundamento teórico, técnica por sus herramientas aplicadas y arte por la creatividad requerida en su ejercicio profesional (Gallardo-Gallardo, 2011).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Conceptos Clave -->
+<section class="content-section" id="conceptos">
+    <div class="container">
+        <h2 class="section-title fade-in-scroll">Conceptos Fundamentales de la Administración</h2>
+        
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <h3 class="card-title">Eficiencia</h3>
+                        <p class="card-text"><strong>Hacer las cosas correctamente con el mínimo de recursos.</strong> Se centra en optimizar el uso de tiempo, dinero y materiales para lograr un resultado.</p>
+                        <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #1565c0; font-weight: 600;"><i class="fas fa-check-circle me-2"></i>Ejemplo:</p>
+                            <p style="margin-top: 0.5rem; color: #424242;">Una empresa de mensajería optimiza sus rutas de entrega reduciendo el consumo de combustible en un 30% sin disminuir las entregas diarias. Usa menos recursos (gasolina, tiempo) manteniendo el mismo resultado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3 class="card-title">Eficacia</h3>
+                        <p class="card-text"><strong>Hacer las cosas correctas para alcanzar objetivos.</strong> Se enfoca en lograr las metas establecidas sin importar necesariamente los recursos utilizados.</p>
+                        <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #7b1fa2; font-weight: 600;"><i class="fas fa-check-circle me-2"></i>Ejemplo:</p>
+                            <p style="margin-top: 0.5rem; color: #424242;">Un equipo de ventas alcanza la meta de captar 100 nuevos clientes en un trimestre según lo planificado. Aunque hayan invertido muchas horas, cumplieron el objetivo: fueron eficaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-star"></i></div>
+                        <h3 class="card-title">Efectividad</h3>
+                        <p class="card-text"><strong>Equilibrio entre eficiencia y eficacia.</strong> Lograr los objetivos correctos utilizando los recursos de manera óptima, generando impacto real y sostenible.</p>
+                        <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #e65100; font-weight: 600;"><i class="fas fa-check-circle me-2"></i>Ejemplo:</p>
+                            <p style="margin-top: 0.5rem; color: #424242;">Una startup tecnológica desarrolla una aplicación que resuelve un problema real del mercado (eficaz), utilizando metodologías ágiles que reducen costos y tiempo de desarrollo (eficiente), logrando rentabilidad y satisfacción del cliente: es efectiva.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="card-title">Productividad</h3>
+                        <p class="card-text"><strong>Relación entre producción obtenida y recursos utilizados.</strong> Mide la capacidad de generar más valor con los mismos o menores insumos.</p>
+                        <div style="background: #e8f5e9; padding: 1.5rem; border-radius: 10px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #2e7d32; font-weight: 600;"><i class="fas fa-check-circle me-2"></i>Ejemplo:</p>
+                            <p style="margin-top: 0.5rem; color: #424242;">Una fábrica de muebles produce 100 sillas diarias con 10 empleados. Tras implementar mejoras en procesos, produce 150 sillas con los mismos 10 empleados: su productividad aumentó 50% (más producción con iguales recursos).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;">
+                    <div class="card-body text-center py-4">
+                        <h4 style="color: white; font-weight: 700; margin-bottom: 1rem;">
+                            <i class="fas fa-lightbulb me-2"></i>La Clave del Éxito
+                        </h4>
+                        <p style="color: white; font-size: 1.1rem; margin: 0;">
+                            Las organizaciones exitosas no solo buscan eficiencia o eficacia de forma aislada, sino que integran todos estos conceptos para lograr efectividad y alta productividad. Según Arnoletto (2014), la gestión administrativa moderna requiere equilibrar estos elementos para alcanzar ventajas competitivas sostenibles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Globalización -->
     <section class="content-section" style="background: white;" id="globalizacion">
         <div class="container">
@@ -346,6 +536,13 @@
                             <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
                             <h3 class="card-title">Transformación Digital</h3>
                             <p class="card-text">La tecnología ha revolucionado el trabajo. El trabajo remoto, la inteligencia artificial y las organizaciones que aprenden son parte del nuevo paradigma administrativo.</p>
+                                                    <p class="card-text"> </p>
+                                                    <p class="card-text"> </p>
+                                                       <p class="card-text"> </p>
+                                                    <p class="card-text"> </p>
+                                                       <p class="card-text"> </p>
+                                                    <p class="card-text"> </p>
+
                         </div>
                     </div>
                 </div>
@@ -353,140 +550,829 @@
         </div>
     </section>
 
-    <!-- Ética -->
-    <section class="content-section" id="etica">
-        <div class="container">
-            <h2 class="section-title fade-in-scroll">Ética y Responsabilidad</h2>
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-4">
-                    <div class="card fade-in-scroll">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800" class="card-img-top" alt="Ética">
-                        <div class="card-body">
-                            <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
-                            <h3 class="card-title">Base de la Confianza</h3>
-                            <p class="card-text">La ética empresarial no es opcional: es fundamental. Actuar con honestidad, respeto y responsabilidad genera confianza, mejora el ambiente laboral y fortalece la reputación organizacional.</p>
-                        </div>
+
+   <!-- Ética -->
+<section class="content-section" id="etica">
+    <div class="container">
+        <h2 class="section-title fade-in-scroll">Introducción a la Ética Empresarial</h2>
+        
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h3 class="card-title">¿Qué es la Ética Empresarial?</h3>
+                        <p class="card-text" style="font-size: 1.1rem;">
+                            La ética empresarial es el conjunto de principios morales y valores que guían el comportamiento de individuos y organizaciones en el contexto de los negocios. Va más allá del cumplimiento legal: implica actuar con integridad, honestidad, respeto y responsabilidad hacia todos los grupos de interés (empleados, clientes, proveedores, comunidad, medio ambiente). La ética es la base de la confianza, elemento fundamental para el éxito sostenible de cualquier organización (Arnoletto, 2014).
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card fade-in-scroll">
-                        <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?w=800" class="card-img-top" alt="Valores">
-                        <div class="card-body">
-                            <div class="card-icon"><i class="fas fa-handshake"></i></div>
-                            <h3 class="card-title">Cultura Organizacional</h3>
-                            <p class="card-text">Una cultura ética se construye con códigos de conducta, capacitación continua y liderazgo ejemplar. Los valores compartidos son la base de relaciones sostenibles y éxito a largo plazo.</p>
+            </div>
+        </div>
+
+        <h3 class="text-center mb-4 fade-in-scroll" style="color: #2a5298; font-weight: 600;">Principios Fundamentales de la Ética Empresarial</h3>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800" class="card-img-top" alt="Honestidad">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                        <h3 class="card-title">Honestidad y Transparencia</h3>
+                        <p class="card-text">Comunicar con veracidad, evitar el engaño y actuar con transparencia en todas las operaciones. La información financiera, las prácticas comerciales y las relaciones laborales deben reflejar la verdad y generar confianza en stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800" class="card-img-top" alt="Respeto">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-hands-helping"></i></div>
+                        <h3 class="card-title">Respeto y Dignidad</h3>
+                        <p class="card-text">Valorar a las personas independientemente de su posición, género, etnia o creencias. Crear ambientes libres de discriminación, acoso y donde se respeten los derechos humanos y laborales fundamentales de todos los colaboradores.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?w=800" class="card-img-top" alt="Justicia">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-gavel"></i></div>
+                        <h3 class="card-title">Justicia y Equidad</h3>
+                        <p class="card-text">Distribuir responsabilidades, recompensas y oportunidades de manera justa. Tomar decisiones imparciales basadas en mérito, garantizar igualdad de oportunidades y compensación equitativa por el trabajo realizado.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <img src="https://images.unsplash.com/photo-1532619187608-e5375cab36aa?w=800" class="card-img-top" alt="Responsabilidad">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                        <h3 class="card-title">Responsabilidad Social</h3>
+                        <p class="card-text">Reconocer el impacto de las acciones empresariales en la sociedad y el medio ambiente. Contribuir al desarrollo sostenible, proteger el entorno natural y generar valor compartido para la comunidad donde opera la organización.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Importancia de la Ética -->
+        <h3 class="text-center mb-4 fade-in-scroll" style="color: #2a5298; font-weight: 600;">¿Por qué es importante la Ética Empresarial?</h3>
+        
+        <div class="row mb-5">
+            <div class="col-md-4 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-left: 4px solid #4dabf7;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #4dabf7;"><i class="fas fa-shield-alt"></i></div>
+                        <h5 class="card-title">Reputación y Confianza</h5>
+                        <p class="card-text">Las empresas éticas construyen reputación sólida, generan confianza en clientes e inversionistas, y se protegen de crisis que dañan la marca y afectan el valor de mercado.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-left: 4px solid #51cf66;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #51cf66;"><i class="fas fa-smile"></i></div>
+                        <h5 class="card-title">Clima Organizacional</h5>
+                        <p class="card-text">La ética mejora el ambiente laboral, aumenta el compromiso y satisfacción de empleados, reduce la rotación y fomenta una cultura de respeto y colaboración.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-left: 4px solid #ffd43b;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #ffd43b;"><i class="fas fa-chart-line"></i></div>
+                        <h5 class="card-title">Sostenibilidad</h5>
+                        <p class="card-text">Garantiza la permanencia a largo plazo. Las prácticas éticas previenen sanciones legales, boicots y conflictos que ponen en riesgo la continuidad del negocio.</p>
+                    </div>
+                </div>
+            </div>
+
+<!-- Códigos de Ética y Cultura -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h3 class="text-center mb-4 fade-in-scroll" style="color: #2a5298; font-weight: 600;">Construyendo una Cultura Ética</h3>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card fade-in-scroll h-100">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-book"></i></div>
+                    <h4 class="card-title">Códigos de Ética y Conducta</h4>
+                    <p class="card-text">Documentos formales que establecen los valores, principios y normas de comportamiento esperadas de todos los miembros de la organización. Incluyen:</p>
+                    <ul style="line-height: 1.8;">
+                        <li>Valores corporativos fundamentales</li>
+                        <li>Normas de conducta específicas</li>
+                        <li>Procedimientos para reportar violaciones</li>
+                        <li>Consecuencias ante incumplimientos</li>
+                        <li>Mecanismos de protección para denunciantes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card fade-in-scroll h-100">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h4 class="card-title">Liderazgo Ético</h4>
+                    <p class="card-text">Los líderes son el ejemplo. Una cultura ética requiere:</p>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Modelar comportamientos éticos</strong> desde la alta dirección</li>
+                        <li><strong>Capacitación continua</strong> en dilemas éticos y toma de decisiones</li>
+                        <li><strong>Comunicación abierta</strong> sobre expectativas y valores</li>
+                        <li><strong>Reconocimiento</strong> de conductas éticas ejemplares</li>
+                        <li><strong>Sanciones consistentes</strong> ante violaciones éticas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dilemas Éticos Comunes -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="card fade-in-scroll" style="background: linear-gradient(135deg, #6075ee 0%, #40d2fe 100%); color: black;">
+                <div class="card-body py-4">
+                    <h3 style="color: white; font-weight: 700; text-align: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-question-circle me-2"></i>Dilemas Éticos en la Práctica Administrativa
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px;">
+                                <h5 style="color: black; font-weight: 600;"><i class="fas fa-coins me-2"></i>Conflictos de Interés</h5>
+                                <p style="color: black; margin: 0;">Situaciones donde intereses personales pueden comprometer decisiones objetivas. Ejemplo: contratar a un familiar para un puesto sin seguir procesos de selección transparentes.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px;">
+                                <h5 style="color: black; font-weight: 600;"><i class="fas fa-user-secret me-2"></i>Confidencialidad</h5>
+                                <p style="color: black; margin: 0;">Proteger información sensible de clientes, empleados y la empresa. Ejemplo: mantener privacidad de datos personales y no divulgar secretos comerciales.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px;">
+                                <h5 style="color: black; font-weight: 600;"><i class="fas fa-bullhorn me-2"></i>Publicidad Engañosa</h5>
+                                <p style="color: black; margin: 0;">Tentación de exagerar beneficios de productos para aumentar ventas. La ética exige comunicación veraz sobre características y limitaciones reales.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px;">
+                                <h5 style="color: black; font-weight: 600;"><i class="fas fa-leaf me-2"></i>Responsabilidad Ambiental</h5>
+                                <p style="color: white; margin: 0;">Balancear costos vs. impacto ecológico. Ejemplo: decidir si invertir en tecnologías limpias aunque sean más costosas inicialmente pero beneficien al planeta.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- El Administrador -->
-    <section class="content-section" style="background: white;" id="administrador">
-        <div class="container">
-            <h2 class="section-title fade-in-scroll">El Administrador Moderno</h2>
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <div class="card fade-in-scroll text-center">
-                        <div class="card-body">
-                            <div class="card-icon"><i class="fas fa-bullseye"></i></div>
-                            <h3 class="card-title">Planeación</h3>
-                            <p class="card-text">Definir metas claras y estrategias efectivas para alcanzar los objetivos organizacionales.</p>
-                        </div>
+    <!-- Beneficios de la Ética -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="card fade-in-scroll">
+                <div class="card-body text-center py-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px;">
+                    <div class="card-icon" style="color: white; font-size: 3rem;"><i class="fas fa-heart"></i></div>
+                    <h3 style="color: white; font-weight: 700; margin: 1.5rem 0;">La Ética como Ventaja Competitiva</h3>
+                    <p style="color: white; font-size: 1.1rem; max-width: 900px; margin: 0 auto;">
+                        En la era de la transparencia y las redes sociales, las organizaciones éticas no solo hacen lo correcto moralmente, sino que obtienen ventajas competitivas tangibles: lealtad de clientes, atracción de talento de calidad, acceso a mercados conscientes, reducción de riesgos legales y financieros, y construcción de relaciones sólidas con todos sus stakeholders. Como señala Gallardo-Gallardo (2011), la ética empresarial ha pasado de ser un "añadido deseable" a convertirse en un "requisito fundamental" para el éxito sostenible en el siglo XXI.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+</section>
+   <!-- El Administrador -->
+<section class="content-section" style="background: white;" id="administrador">
+    <div class="container">
+        <h2 class="section-title fade-in-scroll">El Administrador: Funciones y Responsabilidades</h2>
+        
+        <!-- Funciones del Administrador -->
+        <h3 class="text-center mb-4 fade-in-scroll" style="color: #2a5298; font-weight: 600;">Las Cuatro Funciones Fundamentales</h3>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card fade-in-scroll text-center h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3 class="card-title">Planeación</h3>
+                        <p class="card-text">Definir objetivos, estrategias y planes de acción. Implica analizar el entorno, prever escenarios futuros y establecer cursos de acción para alcanzar metas organizacionales de manera anticipada.</p>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card fade-in-scroll text-center">
-                        <div class="card-body">
-                            <div class="card-icon"><i class="fas fa-sitemap"></i></div>
-                            <h3 class="card-title">Organización</h3>
-                            <p class="card-text">Asignar tareas y responsabilidades de manera eficiente para optimizar recursos.</p>
-                        </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card fade-in-scroll text-center h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-sitemap"></i></div>
+                        <h3 class="card-title">Organización</h3>
+                        <p class="card-text">Estructurar recursos y asignar responsabilidades. Diseñar la jerarquía organizacional, definir puestos, distribuir tareas y coordinar esfuerzos para optimizar la operación empresarial.</p>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card fade-in-scroll text-center">
-                        <div class="card-body">
-                            <div class="card-icon"><i class="fas fa-people-arrows"></i></div>
-                            <h3 class="card-title">Dirección</h3>
-                            <p class="card-text">Motivar, guiar y liderar equipos hacia el cumplimiento de objetivos comunes.</p>
-                        </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card fade-in-scroll text-center h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-people-arrows"></i></div>
+                        <h3 class="card-title">Dirección</h3>
+                        <p class="card-text">Liderar, motivar y comunicar. Guiar al equipo humano mediante liderazgo efectivo, comunicación asertiva, manejo de conflictos y creación de un ambiente laboral que impulse el desempeño y compromiso.</p>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card fade-in-scroll text-center">
-                        <div class="card-body">
-                            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                            <h3 class="card-title">Control</h3>
-                            <p class="card-text">Verificar resultados y ajustar procesos para garantizar el éxito planificado.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card fade-in-scroll text-center h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <h3 class="card-title">Control</h3>
+                        <p class="card-text">Monitorear, evaluar y corregir. Medir resultados, compararlos con estándares establecidos, identificar desviaciones e implementar acciones correctivas para garantizar el cumplimiento de objetivos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsabilidades del Administrador -->
+        <h3 class="text-center mb-4 mt-5 fade-in-scroll" style="color: #2a5298; font-weight: 600;">Responsabilidades Clave</h3>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" class="card-img-top" alt="Decisiones">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-brain"></i></div>
+                        <h3 class="card-title">Toma de Decisiones Estratégicas</h3>
+                        <p class="card-text">El administrador debe analizar información compleja, evaluar alternativas y tomar decisiones que impacten el futuro organizacional. Esto incluye decisiones financieras, operativas, comerciales y de recursos humanos, siempre considerando riesgos y oportunidades del entorno.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800" class="card-img-top" alt="Recursos">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-coins"></i></div>
+                        <h3 class="card-title">Gestión de Recursos</h3>
+                        <p class="card-text">Administrar eficientemente recursos financieros, materiales, tecnológicos y humanos. Implica presupuestar, asignar, optimizar y controlar el uso de todos los activos organizacionales para maximizar resultados y minimizar desperdicios.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" class="card-img-top" alt="Liderazgo">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-users-cog"></i></div>
+                        <h3 class="card-title">Desarrollo del Talento Humano</h3>
+                        <p class="card-text">Responsable de reclutar, capacitar, motivar y retener al personal. Debe crear estrategias de desarrollo profesional, evaluación del desempeño y generación de un clima organizacional positivo que fomente el crecimiento individual y colectivo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" class="card-img-top" alt="Resultados">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                        <h3 class="card-title">Logro de Resultados Sostenibles</h3>
+                        <p class="card-text">Garantizar el cumplimiento de objetivos organizacionales a corto, mediano y largo plazo. Debe equilibrar rentabilidad, crecimiento, responsabilidad social y sostenibilidad ambiental para asegurar la permanencia de la empresa en el mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidades del Administrador -->
+        <h3 class="text-center mb-4 mt-5 fade-in-scroll" style="color: #2a5298; font-weight: 600;">Habilidades Gerenciales Esenciales</h3>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-left: 4px solid #4dabf7;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #4dabf7;"><i class="fas fa-cogs"></i></div>
+                        <h4 class="card-title" style="font-size: 1.3rem;">Habilidades Técnicas</h4>
+                        <p class="card-text">Conocimientos especializados en el área de trabajo: contabilidad, producción, marketing, tecnología. Dominio de herramientas, software y procesos específicos del sector.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-left: 4px solid #51cf66;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #51cf66;"><i class="fas fa-handshake"></i></div>
+                        <h4 class="card-title" style="font-size: 1.3rem;">Habilidades Humanas</h4>
+                        <p class="card-text">Capacidad de trabajar con personas: comunicación efectiva, empatía, inteligencia emocional, manejo de conflictos, trabajo en equipo y motivación del personal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-left: 4px solid #ff6b6b;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #ff6b6b;"><i class="fas fa-eye"></i></div>
+                        <h4 class="card-title" style="font-size: 1.3rem;">Habilidades Conceptuales</h4>
+                        <p class="card-text">Visión estratégica y pensamiento sistémico. Capacidad de análisis, pensamiento crítico, comprensión de la organización como un todo y anticipación de tendencias del entorno.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white;">
+                    <div class="card-body text-center py-4">
+                        <h4 style="color: white; font-weight: 700; margin-bottom: 1rem;">
+                            <i class="fas fa-user-tie me-2"></i>El Perfil del Administrador del Siglo XXI
+                        </h4>
+                        <p style="color: white; font-size: 1.1rem; margin: 0;">
+                            Según Salgado Benítez et al. (2016), el administrador moderno debe ser un profesional integral que combine conocimientos técnicos con habilidades interpersonales y visión estratégica, capaz de adaptarse a entornos cambiantes, liderar con ética y generar valor sostenible para todas las partes interesadas de la organización.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+  <!-- La Empresa -->
+<section class="content-section" id="empresa">
+    <div class="container">
+        <h2 class="section-title fade-in-scroll">La Empresa: Concepto y Tipología</h2>
+        
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-building"></i></div>
+                        <h3 class="card-title">¿Qué es una Empresa?</h3>
+                        <p class="card-text" style="font-size: 1.1rem;">
+                            Una empresa es una unidad económica de producción que integra y coordina recursos humanos, materiales, financieros y tecnológicos para producir bienes o servicios que satisfacen necesidades del mercado, generando valor económico y social. Constituye el motor del desarrollo económico y la fuente principal de empleo en las sociedades modernas (Arnoletto, 2014).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-center mb-4 fade-in-scroll" style="color: #2a5298; font-weight: 600;">Clasificación de las Empresas</h3>
+        
+        <!-- Por Actividad Económica -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h4 class="fade-in-scroll" style="color: #1e3c72; font-weight: 600; margin-bottom: 1.5rem;">
+                    <i class="fas fa-industry me-2"></i>Por Actividad Económica
+                </h4>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon" style="font-size: 2rem;"><i class="fas fa-industry"></i></div>
+                        <h5 class="card-title">Industriales</h5>
+                        <p class="card-text">Transforman materias primas en productos terminados. Ejemplo: fábricas de automóviles, textiles, alimentos procesados.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon" style="font-size: 2rem;"><i class="fas fa-shopping-cart"></i></div>
+                        <h5 class="card-title">Comerciales</h5>
+                        <p class="card-text">Intermediarios entre productores y consumidores. Ejemplo: supermercados, tiendas minoristas, distribuidoras.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon" style="font-size: 2rem;"><i class="fas fa-hands-helping"></i></div>
+                        <h5 class="card-title">De Servicios</h5>
+                        <p class="card-text">Ofrecen actividades intangibles. Ejemplo: bancos, hospitales, consultorías, educación, transporte.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Por Tamaño -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h4 class="fade-in-scroll" style="color: #1e3c72; font-weight: 600; margin-bottom: 1.5rem;">
+                    <i class="fas fa-chart-bar me-2"></i>Por Tamaño
+                </h4>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card fade-in-scroll text-center h-100" style="border-top: 3px solid #4dabf7;">
+                    <div class="card-body">
+                        <h5 class="card-title">Microempresas</h5>
+                        <p class="card-text">Hasta 10 empleados</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card fade-in-scroll text-center h-100" style="border-top: 3px solid #51cf66;">
+                    <div class="card-body">
+                        <h5 class="card-title">Pequeñas</h5>
+                        <p class="card-text">De 11 a 50 empleados</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card fade-in-scroll text-center h-100" style="border-top: 3px solid #ffd43b;">
+                    <div class="card-body">
+                        <h5 class="card-title">Medianas</h5>
+                        <p class="card-text">De 51 a 250 empleados</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card fade-in-scroll text-center h-100" style="border-top: 3px solid #ff6b6b;">
+                    <div class="card-body">
+                        <h5 class="card-title">Grandes</h5>
+                        <p class="card-text">Más de 250 empleados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Por Origen del Capital -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h4 class="fade-in-scroll" style="color: #1e3c72; font-weight: 600; margin-bottom: 1.5rem;">
+                    <i class="fas fa-coins me-2"></i>Por Origen del Capital
+                </h4>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Privadas</h5>
+                        <p class="card-text">El capital pertenece a inversionistas particulares. Buscan rentabilidad y crecimiento económico.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Públicas</h5>
+                        <p class="card-text">El capital es del Estado. Su objetivo es satisfacer necesidades sociales y proveer servicios esenciales.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card fade-in-scroll h-100">
+<div class="card-body">
+<h5 class="card-title">Mixtas</h5>
+<p class="card-text">Combinan capital privado y público. Buscan equilibrio entre rentabilidad y bienestar social.</p>
+</div>
+</div>
+</div>
+</div><!-- Áreas Funcionales -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h3 class="text-center mb-4 fade-in-scroll" style="color: #2a5298; font-weight: 600;">Áreas Funcionales de la Empresa</h3>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card fade-in-scroll">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" class="card-img-top" alt="Finanzas">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h3 class="card-title">Finanzas y Contabilidad</h3>
+                    <p class="card-text">Gestiona recursos económicos, presupuestos, inversiones, financiamiento y estados financieros. Garantiza la salud financiera y rentabilidad organizacional.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card fade-in-scroll">
+                <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800" class="card-img-top" alt="Producción">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                    <h3 class="card-title">Producción u Operaciones</h3>
+                    <p class="card-text">Transforma insumos en productos o servicios. Administra procesos, calidad, inventarios y logística para maximizar eficiencia operativa.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card fade-in-scroll">
+                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800" class="card-img-top" alt="Marketing">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3 class="card-title">Mercadeo y Ventas</h3>
+                    <p class="card-text">Identifica necesidades del mercado, desarrolla estrategias comerciales, gestiona marca, publicidad y canales de distribución para captar y retener clientes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card fade-in-scroll">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800" class="card-img-top" alt="RRHH">
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-user-friends"></i></div>
+                    <h3 class="card-title">Recursos Humanos</h3>
+                    <p class="card-text">Administra el talento humano: reclutamiento, selección, capacitación, evaluación del desempeño, compensación y desarrollo del clima organizacional.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Entorno Empresarial -->
+<section class="content-section" style="background: white;" id="entorno">
+    <div class="container">
+        <h2 class="section-title fade-in-scroll">Influencia del Entorno en las Decisiones Gerenciales</h2>
+        
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <div class="card-body py-4">
+                        <h4 style="color: white; font-weight: 700; margin-bottom: 1rem;">
+                            <i class="fas fa-compass me-2"></i>Concepto de Entorno Empresarial
+                        </h4>
+                        <p style="color: white; font-size: 1.05rem; margin: 0;">
+                            El entorno empresarial comprende todos los factores externos e internos que influyen en la operación y toma de decisiones de la organización. Los gerentes deben analizar constantemente estas variables para adaptar estrategias, minimizar riesgos y aprovechar oportunidades (Gallardo-Gallardo, 2011).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Análisis Externo -->
+        <h3 class="text-center mb-4 fade-in-scroll" style="color: #2a5298; font-weight: 600;">
+            <i class="fas fa-globe-americas me-2"></i>Análisis del Entorno Externo
+        </h3>
+        <p class="text-center mb-4 fade-in-scroll" style="font-size: 1.1rem; color: #5a6c7d;">
+            Variables externas que la empresa no controla pero debe monitorear para adaptarse estratégicamente:
+        </p>
+
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-landmark"></i></div>
+                        <h4 class="card-title">Factores Políticos y Legales</h4>
+                        <p class="card-text"><strong>Variables:</strong> Políticas gubernamentales, regulaciones laborales, leyes tributarias, estabilidad política, tratados comerciales.</p>
+                        <div style="background: #e3f2fd; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #1565c0; font-weight: 600;"><i class="fas fa-lightbulb me-2"></i>Impacto en decisiones:</p>
+                            <p style="margin-top: 0.5rem; color: #424242; font-size: 0.95rem;">Una reforma tributaria puede obligar a la gerencia a ajustar precios, reestructurar costos o modificar su estructura legal corporativa.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-md-12">
-                    <div class="card fade-in-scroll">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200" class="card-img-top" alt="Habilidades">
-                        <div class="card-body">
-                            <h3 class="card-title">Habilidades Esenciales</h3>
-                            <p class="card-text">Un administrador exitoso combina habilidades técnicas (dominio de su área), habilidades humanas (comunicación y empatía) y habilidades conceptuales (visión estratégica). La capacidad de resolver problemas, gestionar el tiempo y liderar equipos define el perfil del gerente moderno.</p>
+
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4 class="card-title">Factores Económicos</h4>
+                        <p class="card-text"><strong>Variables:</strong> Inflación, tasas de interés, tipo de cambio, poder adquisitivo, ciclos económicos, desempleo.</p>
+                        <div style="background: #f3e5f5; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #7b1fa2; font-weight: 600;"><i class="fas fa-lightbulb me-2"></i>Impacto en decisiones:</p>
+                            <p style="margin-top: 0.5rem; color: #424242; font-size: 0.95rem;">Una devaluación de la moneda puede llevar a la empresa a buscar proveedores locales en lugar de importar, afectando decisiones de compras y producción.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                        <h4 class="card-title">Factores Socioculturales</h4>
+                        <p class="card-text"><strong>Variables:</strong> Demografía, valores culturales, estilos de vida, nivel educativo, tendencias de consumo, responsabilidad social.</p>
+                        <div style="background: #fff3e0; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #e65100; font-weight: 600;"><i class="fas fa-lightbulb me-2"></i>Impacto en decisiones:</p>
+                            <p style="margin-top: 0.5rem; color: #424242; font-size: 0.95rem;">El aumento de consumidores conscientes del medio ambiente puede llevar a la gerencia a desarrollar productos sustentables y modificar estrategias de marketing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                        <h4 class="card-title">Factores Tecnológicos</h4>
+                        <p class="card-text"><strong>Variables:</strong> Innovación tecnológica, automatización, digitalización, investigación y desarrollo, obsolescencia.</p>
+                        <div style="background: #e8f5e9; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #2e7d32; font-weight: 600;"><i class="fas fa-lightbulb me-2"></i>Impacto en decisiones:</p>
+                            <p style="margin-top: 0.5rem; color: #424242; font-size: 0.95rem;">La inteligencia artificial puede impulsar decisiones de inversión en tecnología, capacitación del personal o rediseño de procesos productivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-leaf"></i></div>
+                        <h4 class="card-title">Factores Ecológicos</h4>
+                        <p class="card-text"><strong>Variables:</strong> Cambio climático, regulaciones ambientales, recursos naturales, sostenibilidad, gestión de residuos.</p>
+                        <div style="background: #fce4ec; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #c2185b; font-weight: 600;"><i class="fas fa-lightbulb me-2"></i>Impacto en decisiones:</p>
+                            <p style="margin-top: 0.5rem; color: #424242; font-size: 0.95rem;">Nuevas regulaciones ambientales pueden requerir inversiones en tecnologías limpias o cambios en procesos de manufactura para reducir emisiones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card fade-in-scroll h-100">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                        <h4 class="card-title">Factores Competitivos</h4>
+                        <p class="card-text"><strong>Variables:</strong> Competidores directos, productos sustitutos, poder de proveedores, poder de clientes, barreras de entrada.</p>
+                        <div style="background: #e0f2f1; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <p style="margin: 0; color: #00695c; font-weight: 600;"><i class="fas fa-lightbulb me-2"></i>Impacto en decisiones:</p>
+                            <p style="margin-top: 0.5rem; color: #424242; font-size: 0.95rem;">La entrada de un competidor con precios más bajos puede llevar a decisiones sobre diferenciación, reducción de costos o segmentación de mercado.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- La Empresa -->
-    <section class="content-section" id="empresa">
-        <div class="container">
-            <h2 class="section-title fade-in-scroll">La Empresa y su Estructura</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card fade-in-scroll">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" class="card-img-top" alt="Empresa">
-                        <div class="card-body">
-                            <div class="card-icon"><i class="fas fa-building"></i></div>
-                            <h3 class="card-title">Organización Empresarial</h3>
-                            <p class="card-text">La empresa integra recursos humanos, financieros, materiales y tecnológicos organizados para cumplir objetivos. Sus áreas clave incluyen mercadeo, producción, recursos humanos y finanzas, trabajando en sinergia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card fade-in-scroll">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" class="card-img-top" alt="Clasificación">
-                        <div class="card-body">
-                            <div class="card-icon"><i class="fas fa-th-large"></i></div>
-                            <h3 class="card-title">Tipos de Empresas</h3>
-                            <p class="card-text">Las empresas se clasifican por actividad (industrial, comercial, servicios), origen del capital (públicas, privadas), tamaño (pequeñas, medianas, grandes) y forma legal. Las PyMES son motores del desarrollo local.</p>
-                        </div>
+        <!-- Análisis Interno -->
+        <h3 class="text-center mb-4 fade-in-scroll" style="color: #2a5298; font-weight: 600;">
+            <i class="fas fa-building me-2"></i>Análisis del Entorno Interno
+        </h3>
+        <p class="text-center mb-4 fade-in-scroll" style="font-size: 1.1rem; color: #5a6c7d;">
+            Variables internas que la empresa puede controlar y optimizar para mejorar su desempeño:
+        </p>
+
+        <div class="row mb-5">
+            <div class="col-md-3 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-top: 4px solid #4dabf7;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #4dabf7;"><i class="fas fa-users-cog"></i></div>
+                        <h5 class="card-title">Recursos Humanos</h5>
+                        <p class="card-text">Capacidades del personal, cultura organizacional, liderazgo, motivación, rotación de personal.</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card fade-in-scroll" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                        <div class="card-body text-center py-5">
-                            <div class="card-icon" style="color: white;"><i class="fas fa-lightbulb"></i></div>
-                            <h3 class="card-title" style="color: white;">Reflexión Final</h3>
-                            <p class="card-text" style="color: rgba(255,255,255,0.95); font-size: 1.1rem;">La administración no se limita al ámbito empresarial: es una práctica cotidiana. Al planificar nuestro tiempo, organizar actividades o tomar decisiones, aplicamos principios administrativos. Esta disciplina ancestral sigue siendo esencial en un mundo que cambia aceleradamente y nos exige adaptación constante para alcanzar nuestros objetivos.</p>
+            <div class="col-md-3 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-top: 4px solid #51cf66;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #51cf66;"><i class="fas fa-dollar-sign"></i></div>
+                        <h5 class="card-title">Recursos Financieros</h5>
+                        <p class="card-text">Liquidez, endeudamiento, rentabilidad, flujo de caja, estructura de capital.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-top: 4px solid #ffd43b;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #ffd43b;"><i class="fas fa-industry"></i></div>
+                        <h5 class="card-title">Operaciones</h5>
+                        <p class="card-text">Eficiencia productiva, tecnología disponible, calidad, capacidad instalada, procesos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card fade-in-scroll text-center h-100" style="border-top: 4px solid #ff6b6b;">
+                    <div class="card-body">
+                        <div class="card-icon" style="color: #ff6b6b;"><i class="fas fa-chart-pie"></i></div>
+                        <h5 class="card-title">Estrategia</h5>
+                        <p class="card-text">Misión, visión, objetivos, ventajas competitivas, posicionamiento de marca.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Caso Aplicado según la Profesión -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+                    <div class="card-body py-4">
+                        <h3 style="color: white; font-weight: 700; text-align: center; margin-bottom: 1.5rem;">
+                            <i class="fas fa-briefcase me-2"></i>Variables del Entorno según tu Profesión
+                        </h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px;">
+                                    <h5 style="color: white; font-weight: 600;"><i class="fas fa-user-graduate me-2"></i>Administrador de Empresas</h5>
+                                    <p style="color: white; margin: 0; font-size: 0.95rem;">
+                                        Debe considerar: cambios en legislación laboral, fluctuaciones del mercado financiero, tendencias de consumo, avances tecnológicos para gestión, competencia sectorial, disponibilidad de talento calificado y costos operativos. Estas variables impactan decisiones de expansión, inversión, contratación y estrategias comerciales.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px;">
+                                    <h5 style="color: white; font-weight: 600;"><i class="fas fa-laptop-code me-2"></i>Ingeniería de Sistemas</h5>
+                                    <p style="color: white; margin: 0; font-size: 0.95rem;">
+                                        Variables críticas: evolución tecnológica acelerada, ciberseguridad, regulaciones de protección de datos, demanda de transformación digital, competencia por talento tecnológico, inversión en I+D. Estas influyen en decisiones sobre adopción de nuevas tecnologías, desarrollo de software, infraestructura de TI y estrategias de innovación.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px;">
+                                    <h5 style="color: white; font-weight: 600;"><i class="fas fa-heartbeat me-2"></i>Ciencias de la Salud</h5>
+                                    <p style="color: white; margin: 0; font-size: 0.95rem;">
+                                        Considerar: políticas de salud pública, regulaciones sanitarias, envejecimiento poblacional, pandemias, avances médicos, costos de equipamiento, seguros de salud. Impactan decisiones sobre servicios a ofrecer, inversión en tecnología médica, protocolos de atención y gestión de recursos hospitalarios.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px;">
+                                    <h5 style="color: white; font-weight: 600;"><i class="fas fa-graduation-cap me-2"></i>Educación</h5>
+                                    <p style="color: white; margin: 0; font-size: 0.95rem;">
+                                        Variables relevantes: políticas educativas, digitalización de la enseñanza, cambios demográficos, demanda de habilidades del siglo XXI, recursos presupuestales, competencia de instituciones. Influyen en decisiones sobre metodologías pedagógicas, adopción de tecnología educativa, oferta académica y gestión institucional.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
+        <!-- Integración para la Toma de Decisiones -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200" class="card-img-top" alt="Decisiones">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="fas fa-brain"></i></div>
+                        <h3 class="card-title">Integrando el Análisis del Entorno en la Toma de Decisiones</h3>
+                        <p class="card-text" style="font-size: 1.05rem;">
+                            Los administradores exitosos realizan análisis sistemáticos del entorno mediante herramientas como FODA (Fortalezas, Oportunidades, Debilidades, Amenazas), PESTEL (Político, Económico, Social, Tecnológico, Ecológico, Legal) y las Cinco Fuerzas de Porter. Este análisis permite:
+                        </p>
+                        <ul style="font-size: 1.05rem; line-height: 1.8;">
+                            <li><strong>Identificar oportunidades</strong> de mercado antes que la competencia</li>
+                            <li><strong>Anticipar amenazas</strong> y desarrollar planes de contingencia</li>
+                            <li><strong>Optimizar recursos internos</strong> para construir ventajas competitivas</li>
+                            <li><strong>Adaptar estrategias</strong> a cambios del entorno de manera ágil</li>
+                            <li><strong>Tomar decisiones informadas</strong> basadas en datos y análisis riguroso</li>
+                        </ul>
+                        <p class="card-text" style="font-size: 1.05rem;">
+                            Según Salgado Benítez et al. (2016), la capacidad de leer el entorno y traducir esa información en decisiones estratégicas diferencia a las organizaciones que prosperan de aquellas que simplemente sobreviven en mercados competitivos y cambiantes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Reflexión Final y Referencias -->
+<section class="content-section" style="background: #f8f9fa;" id="reflexion">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <div class="card-body text-center py-5">
+                        <div class="card-icon" style="color: white;"><i class="fas fa-lightbulb"></i></div>
+                        <h2 class="card-title" style="color: white; font-size: 2.2rem; margin-bottom: 2rem;">Reflexión Final</h2>
+                        <p class="card-text" style="color: rgba(255,255,255,0.95); font-size: 1.15rem; line-height: 1.9; max-width: 1000px; margin: 0 auto;">
+                            La administración trasciende las fronteras del mundo empresarial para convertirse en una competencia universal aplicable a todos los aspectos de nuestra vida. Desde la gestión de nuestro tiempo personal hasta la coordinación de equipos complejos en organizaciones multinacionales, los principios administrativos están presentes. Como disciplina, la administración integra ciencia, técnica y arte, requiriendo tanto conocimientos teóricos sólidos como habilidades prácticas y sensibilidad humana.
+                        </p>
+                        <p class="card-text" style="color: rgba(255,255,255,0.95); font-size: 1.15rem; line-height: 1.9; max-width: 1000px; margin: 1.5rem auto;">
+                            En un mundo caracterizado por la globalización, la transformación digital acelerada, la diversidad cultural y los desafíos ambientales, el administrador moderno debe ser un profesional adaptable, ético y estratégico. La capacidad de analizar el entorno interno y externo, tomar decisiones informadas, liderar con integridad y gestionar recursos de manera eficiente, eficaz y efectiva determina no solo el éxito organizacional, sino también la sostenibilidad de nuestras sociedades.
+                        </p>
+                        <p class="card-text" style="color: rgba(255,255,255,0.95); font-size: 1.15rem; line-height: 1.9; max-width: 1000px; margin: 1.5rem auto 0;">
+                            Esta disciplina ancestral, que ha evolucionado desde las pirámides de Egipto hasta las startups tecnológicas del presente, sigue siendo esencial para enfrentar los retos del futuro. Cada decisión administrativa, cada proceso optimizado y cada equipo bien liderado contribuye a construir organizaciones más productivas, sociedades más prósperas y un mundo mejor para las generaciones venideras. La administración no es solo una profesión: es una responsabilidad con impacto global.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Referencias Bibliográficas -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="card fade-in-scroll">
+                    <div class="card-body" style="padding: 3rem;">
+                        <h3 class="text-center mb-4" style="color: #1e3c72; font-weight: 700;">
+                            <i class="fas fa-book me-2"></i>Referencias Bibliográficas
+                        </h3>
+                        <div style="max-width: 900px; margin: 0 auto;">
+                            <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border-left: 4px solid #4dabf7;">
+                                <p style="margin-bottom: 1.5rem; line-height: 1.9; text-align: justify; color: #2c3e50;">
+                                    Arnoletto, E. J. (2014). <em>Fundamentos de la administración de organizaciones</em>. Córdoba: Servicios Académicos Internacionales para eumed.net.
+                                </p>
+                                <p style="margin-bottom: 1.5rem; line-height: 1.9; text-align: justify; color: #2c3e50;">
+                                    Gallardo-Gallardo, E. (2011). <em>Fundamentos de la Administración</em>. Departamento de Economía y Organización de Empresas (UB). https://hdl.handle.net/2445/17604
+                                </p>
+                                <p style="margin-bottom: 0; line-height: 1.9; text-align: justify; color: #2c3e50;">
+                                    Salgado Benítez, J., Guerrero López, L., & Salgado Hernández, N. (2016). <em>Fundamentos de la administración</em>. Ciudad de México: Grupo Editorial Éxodo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="mb-0">&copy; 2025 Fundamentos de la Administración. Contenido educativo.</p>
-        <br>    
-                    <p class="mb-0">&copy; Nicolas Molina Osorio 🧑🏻‍💼</p>
-
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="mb-2" style="font-size: 1rem;">
+                    <i class="fas fa-graduation-cap me-2"></i>
+                    © 2025 Fundamentos de la Administración. Contenido educativo.
+                </p>
+                <p class="mb-0" style="font-size: 0.95rem; opacity: 0.9;">
+                    <i class="fas fa-user-tie me-2"></i>
+                    Desarrollado por <strong>Nicolas Molina Osorio</strong> 🧑🏻‍💼
+                </p>
+                <div class="mt-3">
+                    <a href="#hero" style="color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                        <i class="fas fa-arrow-up me-2"></i>Volver arriba
+                    </a>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
